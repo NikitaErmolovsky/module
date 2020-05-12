@@ -13,29 +13,37 @@ begin ".textConv"
 	<Kolvo_iter>
 		gr1++;
 		ar2-=8;
-	if  > goto Kolvo_iter
+	if  > goto Kolvo_iter;
 	gr3 = gr1;
 	<Loop2>
-		gr3=gr3-4;
-		if > goto Loop2
-	
+		//gr3=gr3-4;
+		gr3--;
+		gr3--;
+		gr3--;
+		gr3--;
+		if > goto Loop2;
+	gr1--;
 	<Loop>
-	
+		if >  goto Loop with gr1--;
 		gr2= [ar0++];
 		gr0=4;
 		
 		<Loop1>
 			
-			if gr3 >= 0
+			//if gr3 >= 0;
+			.if gr3 >= 0;
 				[ar1++]= gr2 and 11111111b;
 				
 			gr2>>=8;
-			if gr3<0
+			.endif;
+			//if gr3<0;
+			.if gr3<0;
 				gr3=gr3+1;
+			.endif;
 		gr0--;
 		if >  goto Loop1 with gr0--;
-	gr1--;
-	if >  goto Loop with gr1--;
+	//gr1--;
+	//if >  goto Loop with gr1--;
 	pop ar3,gr3;
 	pop ar2,gr2;
 	pop ar1,gr1;
